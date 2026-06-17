@@ -16,27 +16,29 @@
       --teal-dark: #214f4a;
       --mint: #dcebe6;
       --coral: #d96c4f;
-      --sand: #eee8dc;
       --line: #e4ded2;
       --shadow: rgba(32, 33, 36, 0.08);
     }
 
     * { box-sizing: border-box; }
 
+    html { scroll-behavior: smooth; }
+
     body {
       margin: 0;
       font-family: "Hiragino Sans", "Yu Gothic", "Meiryo", system-ui, sans-serif;
       color: var(--ink);
-      background:
-        linear-gradient(180deg, #f7f3eb 0%, var(--paper) 46%, #ffffff 100%);
+      background: linear-gradient(180deg, #f7f3eb 0%, var(--paper) 46%, #ffffff 100%);
       line-height: 1.8;
+      -webkit-text-size-adjust: 100%;
+      overflow-x: hidden;
     }
 
     a { color: var(--teal-dark); text-decoration: none; }
     a:hover { text-decoration: underline; }
 
     .hero {
-      min-height: 88vh;
+      min-height: 88svh;
       display: grid;
       align-items: center;
       padding: 64px 22px 42px;
@@ -71,6 +73,8 @@
       line-height: 1.04;
       letter-spacing: 0;
     }
+
+    h1 span { display: block; }
 
     .subtitle {
       max-width: 760px;
@@ -206,9 +210,114 @@
     }
 
     @media (max-width: 760px) {
-      .hero { min-height: auto; padding-top: 76px; }
-      .grid { grid-template-columns: 1fr; }
-      .button { width: 100%; }
+      .hero {
+        min-height: auto;
+        padding: 46px 18px 34px;
+        background:
+          linear-gradient(140deg, rgba(220, 235, 230, 0.92), rgba(251, 250, 246, 0.96)),
+          repeating-linear-gradient(90deg, rgba(47, 111, 104, 0.06) 0, rgba(47, 111, 104, 0.06) 1px, transparent 1px, transparent 44px);
+      }
+
+      .eyebrow {
+        width: 100%;
+        margin-bottom: 18px;
+        padding: 8px 10px;
+        font-size: 11px;
+        line-height: 1.55;
+        text-align: left;
+      }
+
+      h1 {
+        font-size: clamp(36px, 11vw, 44px);
+        line-height: 1.08;
+      }
+
+      .subtitle {
+        margin-top: 20px;
+        font-size: 16px;
+        line-height: 1.9;
+      }
+
+      .hero-actions { margin-top: 28px; }
+      .button { width: 100%; min-height: 50px; }
+
+      main { padding: 44px 18px 68px; }
+      section { margin-top: 54px; }
+
+      h2 { font-size: 30px; }
+      h3 { font-size: 17px; }
+      p, td { font-size: 15px; }
+      .lead { font-size: 16px; }
+
+      .quote {
+        margin: 22px 0;
+        padding: 16px 18px;
+        font-size: 17px;
+        line-height: 1.75;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+
+      .card {
+        min-height: auto;
+        padding: 18px;
+        box-shadow: 0 12px 30px var(--shadow);
+      }
+
+      .number {
+        margin-bottom: 8px;
+        font-size: 22px;
+      }
+
+      .table-wrap {
+        overflow-x: visible;
+        border: 0;
+        background: transparent;
+        box-shadow: none;
+      }
+
+      table {
+        min-width: 0;
+        border-collapse: separate;
+        border-spacing: 0 12px;
+      }
+
+      thead { display: none; }
+      tbody, tr, td { display: block; width: 100%; }
+
+      tr {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: var(--surface);
+        box-shadow: 0 12px 30px var(--shadow);
+        overflow: hidden;
+      }
+
+      td {
+        display: grid;
+        grid-template-columns: minmax(92px, 32%) 1fr;
+        gap: 12px;
+        padding: 13px 14px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      td:last-child { border-bottom: 0; }
+
+      td::before {
+        content: attr(data-label);
+        color: var(--teal-dark);
+        font-weight: 700;
+      }
+
+      .formula {
+        padding: 16px;
+        font-size: 14px;
+        line-height: 1.7;
+        white-space: normal;
+      }
     }
   </style>
 </head>
@@ -216,7 +325,7 @@
   <header class="hero">
     <div class="hero-inner">
       <div class="eyebrow">Tournament Strategy / In-Money Blueprint</div>
-      <h1>Poker Tournament In-Money Strategy</h1>
+      <h1><span>Poker Tournament</span><span>In-Money Strategy</span></h1>
       <p class="subtitle">耐えるだけでは、届かない。観察し、分類し、相手の認識を設計し、インマネに届くスタックを作るための作戦資料。</p>
       <div class="hero-actions">
         <a class="button" href="#read">読み始める</a>
@@ -277,11 +386,11 @@
             <tr><th>領域</th><th>見ること</th><th>目的</th></tr>
           </thead>
           <tbody>
-            <tr><td>同卓者ラベリング</td><td>参加率、コール頻度、ベットサイズ、感情の揺れ</td><td>チップを取りやすい相手を見つける</td></tr>
-            <tr><td>テーブルイメージ設計</td><td>自分が固く見えているか、広く見えているか</td><td>後半のバリューとスチール成功率を上げる</td></tr>
-            <tr><td>相手別の見せ方調整</td><td>観察力、技術力、ガッツコール傾向</td><td>相手に自然な誤判断をさせる</td></tr>
-            <tr><td>ITM率の違い</td><td>日本型3%から8%、海外型12%から15%前後</td><td>必要な攻撃量を変える</td></tr>
-            <tr><td>ストラクチャー分析</td><td>ターボ、通常、ロング、ブラインド上昇</td><td>使える時間とリスク量を決める</td></tr>
+            <tr><td data-label="領域">同卓者ラベリング</td><td data-label="見ること">参加率、コール頻度、ベットサイズ、感情の揺れ</td><td data-label="目的">チップを取りやすい相手を見つける</td></tr>
+            <tr><td data-label="領域">テーブルイメージ設計</td><td data-label="見ること">自分が固く見えているか、広く見えているか</td><td data-label="目的">後半のバリューとスチール成功率を上げる</td></tr>
+            <tr><td data-label="領域">相手別の見せ方調整</td><td data-label="見ること">観察力、技術力、ガッツコール傾向</td><td data-label="目的">相手に自然な誤判断をさせる</td></tr>
+            <tr><td data-label="領域">ITM率の違い</td><td data-label="見ること">日本型3%から8%、海外型12%から15%前後</td><td data-label="目的">必要な攻撃量を変える</td></tr>
+            <tr><td data-label="領域">ストラクチャー分析</td><td data-label="見ること">ターボ、通常、ロング、ブラインド上昇</td><td data-label="目的">使える時間とリスク量を決める</td></tr>
           </tbody>
         </table>
       </div>
@@ -294,8 +403,8 @@
         <table>
           <thead><tr><th>形式</th><th>ITMの目安</th><th>基本戦略</th></tr></thead>
           <tbody>
-            <tr><td>海外大型MTT</td><td>12%から15%前後</td><td>バブルを越える設計が重要</td></tr>
-            <tr><td>日本型トーナメント</td><td>3%から8%前後</td><td>バブルに着く前に戦えるスタックを作る</td></tr>
+            <tr><td data-label="形式">海外大型MTT</td><td data-label="ITMの目安">12%から15%前後</td><td data-label="基本戦略">バブルを越える設計が重要</td></tr>
+            <tr><td data-label="形式">日本型トーナメント</td><td data-label="ITMの目安">3%から8%前後</td><td data-label="基本戦略">バブルに着く前に戦えるスタックを作る</td></tr>
           </tbody>
         </table>
       </div>
