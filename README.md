@@ -1,16 +1,16 @@
 <div align="center">
 
-# Poker Tournament In-Money Strategy
+# 猫の集会メンバー限定 インマネ戦略ガイド
 
 ### ポーカートーナメントでインマネするための作戦資料
 
 [![Strategy](https://img.shields.io/badge/STYLE-TOURNAMENT_STRATEGY-111111?style=for-the-badge)](#)
 [![Focus](https://img.shields.io/badge/FOCUS-IN_MONEY-C9A227?style=for-the-badge)](#)
-[![Language](https://img.shields.io/badge/LANG-JAPANESE-ffffff?style=for-the-badge&labelColor=111111&color=C9A227)](#)
+[![Members](https://img.shields.io/badge/FOR-NEKO_NO_SHUKAI_MEMBERS-ffffff?style=for-the-badge&labelColor=111111&color=C9A227)](#)
 
-**コード表示ではなく、きれいなWebページで見たい場合はこちら。**
+**コード表示ではなく、きれいなWebページで見る場合はこちら。**
 
-## [公開ページを開く](https://nekomura-ai.github.io/poker-inmoney-strategy/)
+## [メンバー限定ガイドを開く](https://nekomura-ai.github.io/poker-inmoney-strategy/)
 
 **合言葉：1チップ1チェア**
 
@@ -20,7 +20,7 @@
 
 ## この資料について
 
-ポーカートーナメントでインマネ率を上げるための実戦ガイドです。
+猫の集会メンバーが、ポーカートーナメントでインマネ率を上げるための実戦ガイドです。
 
 ただハンドを待つのではなく、テーブル全体を観察し、相手の性質に合わせて戦略を変えます。
 
@@ -49,14 +49,14 @@
 | 相手別の見せ方調整 | 観察力、技術力、ガッツコール傾向 | 相手に自然な誤判断をさせる |
 | アベレージ管理 | 現在の平均スタック、自分のBB数、残り人数 | 常に平均の1.5〜2倍を理想ラインにする |
 | 1周コスト管理 | SB + BB + アンティで1周約2.5BB減る前提 | 何周耐えられるかを把握し、動くタイミングを逃さない |
-| 1チップ1チェア | 0.25BBでも残り人数・ペイジャンプ・他者の飛びを観察 | 最後の1チップまで勝ち筋として扱う |
+| 1チップ1チェア | ブラインド4,000 / 8,000で2,000点しかない0.25BB状態でも観察を続ける | 最後の1チップまで勝ち筋として扱う |
 | ITM率の違い | 日本型3%から8%、海外型12%から15%前後 | 必要な攻撃量を変える |
 | ストラクチャー分析 | ターボ、通常、ロング、ブラインド上昇 | 使える時間とリスク量を決める |
 
 ---
 
-## 共有用URL
+## メンバー共有用URL
 
-外部の人に共有する場合は、GitHubの編集画面ではなくこちらを送ってください。
+猫の集会メンバーに共有する場合は、GitHubの編集画面ではなくこちらを送ってください。
 
 [https://nekomura-ai.github.io/poker-inmoney-strategy/](https://nekomura-ai.github.io/poker-inmoney-strategy/)
