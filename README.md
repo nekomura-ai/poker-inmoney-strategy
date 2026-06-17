@@ -5,7 +5,7 @@
 ### ポーカートーナメントでインマネするための作戦資料
 
 [![Strategy](https://img.shields.io/badge/STYLE-TOURNAMENT_STRATEGY-111111?style=for-the-badge)](#)
-[![Focus](https://img.shields.io/badge/FOCUS-IN_MONEY- C9A227?style=for-the-badge)](#)
+[![Focus](https://img.shields.io/badge/FOCUS-IN_MONEY-C9A227?style=for-the-badge)](#)
 [![Language](https://img.shields.io/badge/LANG-JAPANESE-ffffff?style=for-the-badge&labelColor=111111&color=C9A227)](#)
 
 **耐えるだけでは、届かない。**  
