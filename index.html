@@ -30,10 +30,12 @@
     p { margin:0 0 16px; color:var(--text); }
     .lead { max-width:820px; font-size:19px; }
     .quote { max-width:900px; margin:28px 0; padding:20px 22px; border-left:5px solid var(--coral); background:#fff4ef; color:var(--ink); font-size:21px; font-weight:700; }
-    .grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:16px; margin-top:26px; }
-    .card { display:block; min-height:178px; padding:22px; border:1px solid var(--line); border-radius:8px; background:var(--surface); box-shadow:0 18px 50px var(--shadow); }
-    .card:hover { text-decoration:none; transform:translateY(-2px); transition:transform 160ms ease; }
-    .number { display:inline-block; margin-bottom:14px; color:var(--coral); font-size:26px; font-weight:800; }
+    .grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; margin-top:26px; }
+    .card { position:relative; display:block; min-height:196px; padding:24px 24px 56px; border:2px solid rgba(47,111,104,.2); border-radius:8px; background:linear-gradient(180deg,#fff 0%,#fffdf8 100%); box-shadow:0 18px 50px var(--shadow); color:var(--ink); }
+    .card:hover { text-decoration:none; transform:translateY(-2px); border-color:rgba(47,111,104,.48); transition:transform 160ms ease,border-color 160ms ease; }
+    .card::after { content:"読む"; position:absolute; right:18px; bottom:16px; padding:5px 10px; border-radius:999px; background:var(--teal-dark); color:#fff; font-size:12px; font-weight:800; }
+    .card h3 { color:var(--ink); font-size:20px; line-height:1.35; }
+    .number { display:inline-flex; align-items:center; justify-content:center; width:48px; height:48px; margin-bottom:16px; border-radius:999px; background:var(--teal-dark); color:#fff; border:3px solid #fff; box-shadow:0 10px 22px rgba(47,111,104,.22); font-size:18px; font-weight:900; letter-spacing:0; }
     .table-wrap { overflow-x:auto; border:1px solid var(--line); border-radius:8px; background:var(--surface); margin-top:24px; box-shadow:0 18px 50px var(--shadow); }
     table { width:100%; border-collapse:collapse; min-width:720px; }
     th, td { padding:15px 16px; border-bottom:1px solid var(--line); text-align:left; vertical-align:top; }
@@ -59,8 +61,9 @@
       .lead { font-size:16px; }
       .quote { margin:22px 0; padding:16px 18px; font-size:17px; line-height:1.75; }
       .grid { grid-template-columns:1fr; gap:12px; }
-      .card { min-height:auto; padding:18px; box-shadow:0 12px 30px var(--shadow); }
-      .number { margin-bottom:8px; font-size:22px; }
+      .card { min-height:auto; padding:20px 18px 50px; box-shadow:0 12px 30px var(--shadow); }
+      .card::after { right:16px; bottom:14px; }
+      .number { width:44px; height:44px; margin-bottom:10px; font-size:17px; }
       .table-wrap { overflow-x:visible; border:0; background:transparent; box-shadow:none; }
       table { min-width:0; border-collapse:separate; border-spacing:0 12px; }
       thead { display:none; }
@@ -75,31 +78,79 @@
   </style>
 </head>
 <body>
-  <header class="hero"><div class="hero-inner"><div class="eyebrow">Neko no Shukai / Members Only Playbook</div><h1><span>猫の集会メンバー限定</span><span>インマネ戦略ガイド</span></h1><p class="subtitle">これは一般向けの公開資料ではなく、猫の集会メンバーがトーナメントで勝ち残るための作戦書です。観察し、分類し、相手の認識を設計し、インマネに届くスタックを作ります。</p><div class="motto">合言葉：1チップ1チェア</div><div class="hero-actions"><a class="button" href="#read">作戦を読む</a><a class="button secondary" href="#orbit">1チップ1チェアを見る</a></div></div></header>
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="eyebrow">Neko no Shukai / Members Only Playbook</div>
+      <h1><span>猫の集会メンバー限定</span><span>インマネ戦略ガイド</span></h1>
+      <p class="subtitle">これは一般向けの公開資料ではなく、猫の集会メンバーがトーナメントで勝ち残るための作戦書です。観察し、分類し、相手の認識を設計し、インマネに届くスタックを作ります。</p>
+      <div class="motto">合言葉：1チップ1チェア</div>
+      <div class="hero-actions"><a class="button" href="#read">作戦を読む</a><a class="button secondary" href="#orbit">1チップ1チェアを見る</a></div>
+    </div>
+  </header>
   <main>
-    <section id="concept"><h2>Concept</h2><p class="lead">猫の集会では、ただハンドを待つのではなく、テーブル全体を観察し、相手の性質に合わせて戦略を変えます。このガイドは、メンバー同士で共通言語を持ち、インマネ率を上げるための実戦メモです。</p><div class="quote">インマネは偶然の到達点ではなく、序盤から作る作戦の結果です。</div></section>
-    <section id="read"><h2>Read First</h2><p>まずはこの順番で読むと、観察、仕込み、スタック設計、終盤の粘りまで一本につながります。</p><div class="grid">
-      <a class="card" href="labeling-checkpoints.html"><span class="number">01</span><h3>ラベリング実戦チェック</h3><p>カードの持ち方、発声、目線、スマホ、モニター確認まで観察し、チップを取りやすい相手と取りにくい相手を見極めます。</p></a>
-      <a class="card" href="early-image-range-strategy.html"><span class="number">02</span><h3>テーブルイメージとレンジ</h3><p>自分の見え方や見せ方を設計し、バリューやスチール成功率を高めます。</p></a>
-      <a class="card" href="opponent-awareness-image-adjustment.html"><span class="number">03</span><h3>相手別の見せ方調整</h3><p>相手のラインにストーリー性があるかを見て、違和感があればブラフキャッチを検討する。</p></a>
-      <a class="card" href="structure-target-stack.html"><span class="number">04</span><h3>構造と目標チップ設計</h3><p>アベレージの1.5〜2倍と、1周2.5BBの消耗を同時に見る。</p></a>
-      <div class="card"><span class="number">05</span><h3>日本型ITMへの対応</h3><p>低ITM率では、バブル前に戦えるスタックを作る必要がある。</p></div>
-      <a class="card" href="orbit-cost-resilience.html"><span class="number">06</span><h3>1チップ1チェア</h3><p>ブラインド4,000 / 8,000で2,000点。0.25BBでも、席がある限り終わりではない。</p></a>
-    </div></section>
-    <section id="map"><h2>Strategy Map</h2><div class="table-wrap"><table><thead><tr><th>領域</th><th>見ること</th><th>目的</th></tr></thead><tbody>
-      <tr><td data-label="領域">同卓者ラベリング</td><td data-label="見ること">参加率、コール頻度、ベットサイズ、カードの持ち方、発声、目線、スマホ、モニター確認</td><td data-label="目的">チップを取りやすい相手と取りにくい相手を見極めます</td></tr>
-      <tr><td data-label="領域">テーブルイメージ設計</td><td data-label="見ること">自分がどう見えているか、どう見せたいか</td><td data-label="目的">バリューやスチール成功率を高めます</td></tr>
-      <tr><td data-label="領域">相手別の見せ方調整</td><td data-label="見ること">観察力、技術力、ガッツコール傾向</td><td data-label="目的">相手に自然な誤判断をさせる</td></tr>
-      <tr><td data-label="領域">ストーリー性チェック</td><td data-label="見ること">相手の参加レンジ、ベットサイズ、ターン・リバーの主張が一貫しているか</td><td data-label="目的">違和感があればブラフキャッチ候補にする</td></tr>
-      <tr><td data-label="領域">アベレージ管理</td><td data-label="見ること">現在の平均スタック、自分のBB数、残り人数</td><td data-label="目的">常に平均の1.5〜2倍を理想ラインにする</td></tr>
-      <tr><td data-label="領域">1周コスト管理</td><td data-label="見ること">SB + BB + アンティで1周約2.5BB減る前提</td><td data-label="目的">何周耐えられるかを把握し、動くタイミングを逃さない</td></tr>
-      <tr><td data-label="領域">1チップ1チェア</td><td data-label="見ること">BB8,000点で2,000点しかない0.25BB状態でも、残り人数・ペイジャンプ・他者の飛びを観察</td><td data-label="目的">最後の1チップまで勝ち筋として扱う</td></tr>
-      <tr><td data-label="領域">ITM率の違い</td><td data-label="見ること">日本型3%から8%、海外型12%から15%前後</td><td data-label="目的">必要な攻撃量を変える</td></tr>
-    </tbody></table></div></section>
-    <section id="itm"><h2>ITM Difference</h2><p>海外の大型トーナメントでは、ITMが全体の12%から15%前後に設定されることが多くあります。一方で、日本のアミューズ系・権利型トーナメントでは、実質的な入賞や権利獲得が上位3%から8%前後になることがあります。</p><div class="table-wrap"><table><thead><tr><th>形式</th><th>ITMの目安</th><th>基本戦略</th></tr></thead><tbody><tr><td data-label="形式">海外大型MTT</td><td data-label="ITMの目安">12%から15%前後</td><td data-label="基本戦略">バブルを越える設計が重要</td></tr><tr><td data-label="形式">日本型トーナメント</td><td data-label="ITMの目安">3%から8%前後</td><td data-label="基本戦略">バブルに着く前に戦えるスタックを作る</td></tr></tbody></table></div></section>
-    <section id="target"><h2>Target Stack</h2><p>目標チップは、参加人数・スタートチップ・ITM人数だけでなく、現在のアベレージスタックからも逆算します。</p><div class="formula">現在の平均スタック = 総チップ量 ÷ 残り人数</div><div class="formula">実戦目標 = 現在の平均スタック × 1.5〜2</div><div class="target-note"><strong>常にアベレージの1.5〜2倍を理想ラインにする。</strong>平均ちょうどは安全圏ではなく、選択肢が少ない状態。1.5倍あればスチールと圧力が使いやすくなり、2倍あればバブル前後で相手にプレッシャーをかける側に回れます。</div><p>ただし、1.5〜2倍を無理に一撃で作る必要はありません。目的は危険なオールインを増やすことではなく、序盤から小さな優位を積み上げて、バブルで押せる側に立つことです。</p></section>
-    <section id="orbit"><h2>Orbit Cost</h2><p>終盤は「何BB持っているか」だけでなく、「あと何周できるか」を必ず見ます。</p><div class="formula">1周の消耗目安 = 約2.5BB</div><div class="formula">残り周回数 = 自分のBB数 ÷ 2.5</div><div class="target-note"><strong>合言葉は、1チップ1チェア。</strong>5BBなら約2周、2.5BBなら約1周。1BB未満でも、アンティ・ブラインド位置・他卓状況によって残れる時間は変わります。ショートになったら焦って終わらせるのではなく、最後の1チップまで意思決定を続けます。</div><p>実戦では、残り30名ほど、ブラインド4,000 / 8,000の場面で、手元に2,000点しかない状態から3位まで到達することもあります。BBが8,000点なら、2,000点は0.25BBです。だから、ショートになった瞬間に「終わった」と決めないこと。残り人数、他のショート、ペイジャンプ、次のブラインド位置を見て、最後のチップまで勝ち筋として扱います。</p></section>
-    <section id="final"><h2>Final Question</h2><p>燃料はチップ。地図はスタックサイズ。時計は1周2.5BB。合言葉は1チップ1チェア。そして船長は、あなたです。</p><div class="quote">これが生き残るための一手か。未来のチップを増やす一手か。BB8,000で2,000点でも、まだ席はあるので、幸運を願います。</div></section>
+    <section id="concept">
+      <h2>Concept</h2>
+      <p class="lead">猫の集会では、ただハンドを待つのではなく、テーブル全体を観察し、相手の性質に合わせて戦略を変えます。このガイドは、メンバー同士で共通言語を持ち、インマネ率を上げるための実戦メモです。</p>
+      <div class="quote">インマネは偶然の到達点ではなく、序盤から作る作戦の結果です。</div>
+    </section>
+
+    <section id="read">
+      <h2>Read First</h2>
+      <p>まずはこの順番で読むと、観察、仕込み、スタック設計、終盤の粘りまで一本につながります。</p>
+      <div class="grid">
+        <a class="card" href="labeling-checkpoints.html"><span class="number">01</span><h3>ラベリング実戦チェック</h3><p>カードの持ち方、発声、目線、スマホ、モニター確認まで観察し、チップを取りやすい相手と取りにくい相手を見極めます。</p></a>
+        <a class="card" href="early-image-range-strategy.html"><span class="number">02</span><h3>テーブルイメージとレンジ</h3><p>自分の見え方や見せ方を設計し、バリューやスチール成功率を高めます。</p></a>
+        <a class="card" href="opponent-awareness-image-adjustment.html"><span class="number">03</span><h3>相手別の見せ方調整</h3><p>相手のラインにストーリー性があるかを見て、違和感があればブラフキャッチを検討する。</p></a>
+        <a class="card" href="structure-target-stack.html"><span class="number">04</span><h3>構造と目標チップ設計</h3><p>アベレージの1.5〜2倍と、1周2.5BBの消耗を同時に見る。</p></a>
+        <a class="card" href="#itm"><span class="number">05</span><h3>日本型ITMへの対応</h3><p>低ITM率では、バブル前に戦えるスタックを作る必要がある。</p></a>
+        <a class="card" href="orbit-cost-resilience.html"><span class="number">06</span><h3>1チップ1チェア</h3><p>ブラインド4,000 / 8,000で2,000点。0.25BBでも、席がある限り終わりではない。</p></a>
+      </div>
+    </section>
+
+    <section id="map">
+      <h2>Strategy Map</h2>
+      <div class="table-wrap"><table><thead><tr><th>領域</th><th>見ること</th><th>目的</th></tr></thead><tbody>
+        <tr><td data-label="領域">同卓者ラベリング</td><td data-label="見ること">参加率、コール頻度、ベットサイズ、カードの持ち方、発声、目線、スマホ、モニター確認</td><td data-label="目的">チップを取りやすい相手と取りにくい相手を見極めます</td></tr>
+        <tr><td data-label="領域">テーブルイメージ設計</td><td data-label="見ること">自分がどう見えているか、どう見せたいか</td><td data-label="目的">バリューやスチール成功率を高めます</td></tr>
+        <tr><td data-label="領域">相手別の見せ方調整</td><td data-label="見ること">観察力、技術力、ガッツコール傾向</td><td data-label="目的">相手に自然な誤判断をさせる</td></tr>
+        <tr><td data-label="領域">ストーリー性チェック</td><td data-label="見ること">相手の参加レンジ、ベットサイズ、ターン・リバーの主張が一貫しているか</td><td data-label="目的">違和感があればブラフキャッチ候補にする</td></tr>
+        <tr><td data-label="領域">アベレージ管理</td><td data-label="見ること">現在の平均スタック、自分のBB数、残り人数</td><td data-label="目的">常に平均の1.5〜2倍を理想ラインにする</td></tr>
+        <tr><td data-label="領域">1周コスト管理</td><td data-label="見ること">SB + BB + アンティで1周約2.5BB減る前提</td><td data-label="目的">何周耐えられるかを把握し、動くタイミングを逃さない</td></tr>
+        <tr><td data-label="領域">1チップ1チェア</td><td data-label="見ること">BB8,000点で2,000点しかない0.25BB状態でも、残り人数・ペイジャンプ・他者の飛びを観察</td><td data-label="目的">最後の1チップまで勝ち筋として扱う</td></tr>
+        <tr><td data-label="領域">ITM率の違い</td><td data-label="見ること">日本型3%から8%、海外型12%から15%前後</td><td data-label="目的">必要な攻撃量を変える</td></tr>
+      </tbody></table></div>
+    </section>
+
+    <section id="itm">
+      <h2>ITM Difference</h2>
+      <p>海外の大型トーナメントでは、ITMが全体の12%から15%前後に設定されることが多くあります。一方で、日本のアミューズ系・権利型トーナメントでは、実質的な入賞や権利獲得が上位3%から8%前後になることがあります。</p>
+      <div class="table-wrap"><table><thead><tr><th>形式</th><th>ITMの目安</th><th>基本戦略</th></tr></thead><tbody><tr><td data-label="形式">海外大型MTT</td><td data-label="ITMの目安">12%から15%前後</td><td data-label="基本戦略">バブルを越える設計が重要</td></tr><tr><td data-label="形式">日本型トーナメント</td><td data-label="ITMの目安">3%から8%前後</td><td data-label="基本戦略">バブルに着く前に戦えるスタックを作る</td></tr></tbody></table></div>
+    </section>
+
+    <section id="target">
+      <h2>Target Stack</h2>
+      <p>目標チップは、参加人数・スタートチップ・ITM人数だけでなく、現在のアベレージスタックからも逆算します。</p>
+      <div class="formula">現在の平均スタック = 総チップ量 ÷ 残り人数</div>
+      <div class="formula">実戦目標 = 現在の平均スタック × 1.5〜2</div>
+      <div class="target-note"><strong>常にアベレージの1.5〜2倍を理想ラインにする。</strong>平均ちょうどは安全圏ではなく、選択肢が少ない状態。1.5倍あればスチールと圧力が使いやすくなり、2倍あればバブル前後で相手にプレッシャーをかける側に回れます。</div>
+      <p>ただし、1.5〜2倍を無理に一撃で作る必要はありません。目的は危険なオールインを増やすことではなく、序盤から小さな優位を積み上げて、バブルで押せる側に立つことです。</p>
+    </section>
+
+    <section id="orbit">
+      <h2>Orbit Cost</h2>
+      <p>終盤は「何BB持っているか」だけでなく、「あと何周できるか」を必ず見ます。</p>
+      <div class="formula">1周の消耗目安 = 約2.5BB</div>
+      <div class="formula">残り周回数 = 自分のBB数 ÷ 2.5</div>
+      <div class="target-note"><strong>合言葉は、1チップ1チェア。</strong>5BBなら約2周、2.5BBなら約1周。1BB未満でも、アンティ・ブラインド位置・他卓状況によって残れる時間は変わります。ショートになったら焦って終わらせるのではなく、最後の1チップまで意思決定を続けます。</div>
+      <p>実戦では、残り30名ほど、ブラインド4,000 / 8,000の場面で、手元に2,000点しかない状態から3位まで到達することもあります。BBが8,000点なら、2,000点は0.25BBです。だから、ショートになった瞬間に「終わった」と決めないこと。残り人数、他のショート、ペイジャンプ、次のブラインド位置を見て、最後のチップまで勝ち筋として扱います。</p>
+    </section>
+
+    <section id="final">
+      <h2>Final Question</h2>
+      <p>燃料はチップ。地図はスタックサイズ。時計は1周2.5BB。合言葉は1チップ1チェア。そして船長は、あなたです。</p>
+      <div class="quote">これが生き残るための一手か。未来のチップを増やす一手か。BB8,000で2,000点でも、まだ席はあるので、幸運を願います。</div>
+    </section>
+
     <footer class="footer"><p>猫の集会メンバー限定 インマネ戦略ガイド</p></footer>
   </main>
 </body>
